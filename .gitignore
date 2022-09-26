@@ -1,0 +1,14 @@
+
+__pycache__
+env
+
+tests/sim_build
+tests/*.o
+tests/results.xml
+
+tests/top
+tests/waiter
+tests/sine_lut_prueba
+
+tests/waveforms
+
