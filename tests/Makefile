@@ -33,12 +33,14 @@ PWD=$(shell pwd)
 
 #export PYTHONPATH := $(PWD)/../model:$(PYTHONPATH)
 
-VHDL_SOURCES = $(PWD)/../hdl/sine_prueba.vhd
+VHDL_SOURCES = $(PWD)/../hdl/top.vhd
 
-TOPLEVEL := sine_lut_prueba
-MODULE   := test_sine_gen
+TOPLEVEL := top
+MODULE   := test_sine_wave_gen
 SIM := GHDL
 
-SIM_ARGS+=--vcd=./waveforms/sine_prueba.vcd
+$(shell mkdir -p ./waveforms)
+SIM_ARGS+=--vcd=./waveforms/top.vcd
 
 include $(shell cocotb-config --makefiles)/Makefile.sim
+
