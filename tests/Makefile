@@ -33,7 +33,8 @@ PWD=$(shell pwd)
 
 #export PYTHONPATH := $(PWD)/../model:$(PYTHONPATH)
 
-VHDL_SOURCES = $(PWD)/../hdl/top.vhd
+VHDL_SOURCES = $(PWD)/../hdl/top.vhd $(PWD)/../hdl/fsm.vhd $(PWD)/../hdl/nine_counter.vhd $(PWD)/../hdl/rom.vhd
+VHDL_SOURCES += $(PWD)/../hdl/sin_rom.vhd $(PWD)/../hdl/waiter.vhd
 
 TOPLEVEL := top
 MODULE   := test_sine_wave_gen
