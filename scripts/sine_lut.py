@@ -2,7 +2,7 @@ import numpy as np
 from numpy import sin,pi
 import matplotlib.pyplot as plt
 
-x = np.linspace(0,1.0,100)
+x = np.linspace(0,1.0,4096)
 
 lut = sin(2*pi*x)*750+750
 
