@@ -3,7 +3,7 @@ USE IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.NUMERIC_STD.ALL;
 USE IEEE.MATH_REAL.ALL;
 
-entity Top_Mod is
+entity top is
   port (
     input_stream              : in  std_logic_vector(1 downto 0); 
     i_clk                     : in std_logic;
@@ -14,7 +14,7 @@ entity Top_Mod is
 end entity ;
 
 
-ARCHITECTURE Behaviourl of Top_Mod is
+ARCHITECTURE Behaviourl of top is
  
     signal I_signal : std_logic_vector(18 downto 0);
     signal Q_signal : std_logic_vector(18 downto 0);

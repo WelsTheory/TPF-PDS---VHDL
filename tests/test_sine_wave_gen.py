@@ -6,16 +6,23 @@ from cocotb.triggers import Edge, RisingEdge, Timer
 @cocotb.test()
 async def test_sine_wave_generator(dut) -> None:
 
-    dut.wave_period.value = 0
+    dut.i_fcw.value = 100
 
     # Create and start clcok
-    clock = Clock(dut.CLOCK_100, 1, units="us")
+    clock = Clock(dut.i_clk, 100, units="ns")
     cocotb.start_soon(clock.start())
 
-    dut.reset.value = 0
-    await Timer(1, units="us")
-    dut.reset.value = 1
-    await Timer(1, units="us")
+    dut.i_rst_h.value = 1
+    dut.input_stream.value = 0
+    await Timer(20, units="ns")
+    dut.i_rst_h.value = 0
+    await Timer(1, units="ms")
+    dut.input_stream.value = 1
+    await Timer(1, units="ms")
+    dut.input_stream.value = 2
+    await Timer(1, units="ms")
+    dut.input_stream.value = 3
+    await Timer(1, units="ms")
+    dut.input_stream.value = 0
 
-
-    await Timer(100, units="ms")
+    await Timer(10, units="ms")
