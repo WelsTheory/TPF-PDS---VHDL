@@ -14,15 +14,16 @@ async def test_sine_wave_generator(dut) -> None:
 
     dut.i_rst_h.value = 1
     dut.input_stream.value = 0
-    await Timer(20, units="ns")
+
+    await Timer(500, units="ns")
     dut.i_rst_h.value = 0
-    await Timer(1, units="ms")
+    await Timer(20000, units="ns")
     dut.input_stream.value = 1
-    await Timer(1, units="ms")
+    await Timer(20000, units="ns")
     dut.input_stream.value = 2
-    await Timer(1, units="ms")
+    await Timer(20000, units="ns")
     dut.input_stream.value = 3
-    await Timer(1, units="ms")
+    await Timer(20000, units="ns")
     dut.input_stream.value = 0
 
-    await Timer(10, units="ms")
+    await Timer(20000, units="ns")

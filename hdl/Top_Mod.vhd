@@ -43,7 +43,6 @@ ARCHITECTURE Behaviourl of top is
     END COMPONENT FA_N;
 
 begin
-        --@qam_mod Component Wiring/Mapping
          u_qam_mod :    qam_mod
                     port map(
                         i_clk            => i_clk,

@@ -36,22 +36,16 @@ ARCHITECTURE rtl of qam_mod is
         );
     end COMPONENT generate_wave;
  
-------------------------------------------------------------------------------------------
-
-    --***************************************
-    --START WIRING THE SUB-SYSTEM COMPONENT
-    --***************************************
     SIGNAL Q_sine                      : std_logic_vector(15 downto 0);
     SIGNAL I_cos                       : std_logic_vector(15 downto 0);
 
     SIGNAL I_mapper                    : std_logic_vector(1 downto 0);
     SIGNAL Q_mapper                    : std_logic_vector(1 downto 0);
---    SIGNAL r_molulator                 : signed(11 downto 0);               --modulator output
     SIGNAL I_molulator                 : signed(18 downto 0);
     SIGNAL Q_molulator                 : signed(18 downto 0);               --modulator output
 
     SIGNAL I_upconverted               : signed(18 downto 0); 
-    SIGNAL Q_upconverted               : signed(18 downto 0);                -- 6 + 2 + 1 bit sign always '0'
+    SIGNAL Q_upconverted               : signed(18 downto 0);
 
     begin
 
